@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h1>Cálculo de Salário</h1>
+<div class="container">
+    <form id="calc-form">
+        <label for="salario_mensal">Salário Mensal (R$):</label>
+        <input type="number" id="salario_mensal" name="salario_mensal" step="0.01" required>
+
+        <label for="dias_trabalhados">Dias Trabalhados:</label>
+        <input type="number" id="dias_trabalhados" name="dias_trabalhados" required>
+
+        <label for="horas_trabalhadas_por_dia">Horas por Dia:</label>
+        <input type="number" id="horas_trabalhadas_por_dia" name="horas_trabalhadas_por_dia" required>
+
+        <label for="dias_uteis_no_mes">Dias Úteis no Mês:</label>
+        <input type="number" id="dias_uteis_no_mes" name="dias_uteis_no_mes" required>
+
+        <label for="dias_faltados">Dias Faltados:</label>
+        <input type="number" id="dias_faltados" name="dias_faltados" required>
+
+        <label for="percentual_vt">Percentual Vale-Transporte (%):</label>
+        <input type="number" id="percentual_vt" name="percentual_vt" step="0.01" required>
+
+        <button type="submit">Calcular</button>
+    </form>
+</div>
+
+<div id="resultado" style="display:none;">
+    <h2>Resumo do Mês</h2>
+    <p id="total_horas_trabalhadas"></p>
+    <p id="valor_trabalhado"></p>
+    <p id="desconto_faltas"></p>
+    <p id="desconto_vale_transporte"></p>
+    <p id="salario_final"></p>
+</div>
+
+{% endblock %}
